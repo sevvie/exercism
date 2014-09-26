@@ -8,9 +8,8 @@
                 \G \C
                 \T \A }
         nuc-comp  (get comps nuc)]
-    (if (nil? nuc-comp)
-      (throw (AssertionError.))
-      nuc-comp)))
+    (do (assert (not (nil? nuc-comp)))
+        nuc-comp)))
 
 (defn to-rna
   "Map across the provided DNA sequence, finding the RNA complement. Throws
